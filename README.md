@@ -13,7 +13,7 @@ https://koda-b5-weekly3-two.vercel.app/
 
 ## View About.html
 
-## Mobile View
+### Mobile View
 ![Mobile](./assets/mobile-about.png)
 
 ### Dekstop View
