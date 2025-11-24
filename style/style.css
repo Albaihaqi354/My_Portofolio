@@ -15,7 +15,7 @@
     --spacing-md: 60px;
     --spacing-lg: 120px;
     --bp-sm: 640px;
-    --bp-md: 768px;
+    --bp-md: 769px;
     --bp-lg: 1024px;
     --bp-xl: 1280px;
     --bp-2xl: 1536px;
@@ -90,9 +90,11 @@ header {
     width: 25px;
     height: 3px;
     background-color: var(--bg-light);
+    transition: all 0.3s ease;
+    border-radius: 5px;
 }
 
-/* HERI */
+/* HERO */
 .hero-wrapper {
     position: relative;
     width: 100%;
@@ -170,12 +172,29 @@ header {
     padding: 5px 25px;
     display: inline-block;
     transition: all 0.3s ease;
+    &:hover {
+        background-color: var(--primary);
+        color: var(--bg-light);
+        border-color: var(--primary);
+    }
 }
 
-.button-about a:hover {
-    background-color: var(--primary);
+.button-about a:first-child {
+    text-decoration: none;
     color: var(--bg-light);
-    border-color: var(--primary);
+    background-color: var(--primary);
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    border: 2px solid  var(--primary);
+    border-radius: 5px;
+    padding: 5px 25px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    &:hover {
+        color: black;
+        border-color: black;
+        background-color: #FBFBFB;
+    }
 }
 
 /* PROJECTS */
@@ -613,6 +632,7 @@ footer svg {
     }
     .nav-hamburger:checked + .hamburger span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
+        transition: all 0.3s ease;
     }
     .nav-hamburger:checked + .hamburger span:nth-child(2) {
         opacity: 0;
@@ -620,6 +640,7 @@ footer svg {
     }
     .nav-hamburger:checked + .hamburger span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+        transition: all 0.3 ease;
     }
     .nav-links a {
         color: var(--bg-light);
@@ -633,13 +654,13 @@ footer svg {
         color: var(--bg-light);
     }
     .svg-bg svg {
-        width: min(55vw, 420px);
+        width: min(75vw, 720px);
     }
     .logo {
         font-size: 14px;
     }
     main {
-        margin-top: min(28vh, 280px);
+        margin-top: min(38vh, 280px);
     }
     .text-name {
         font-size: 30px;
@@ -741,6 +762,31 @@ footer svg {
         height: auto;
         aspect-ratio: 1 / 1;
         object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+    .svg-bg svg {
+        width: clamp(420px, 42vw, 650px);
+        height: auto;
+    }
+
+    .text-name {
+        font-size: clamp(1.2rem, 3.2vs, 2.5rem);
+        line-height: 1.15;
+    }
+
+    .text-work {
+        font-size: 16px;
+    }
+
+    .section-about {
+        padding: 0 40px;
+        min-height: 380px;
+    }
+
+    .container-text {
+        max-width: 460px;
     }
 }
 
